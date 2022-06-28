@@ -1,0 +1,26 @@
+div {
+    background-origin: padding-box;
+    height: 100px;
+    background: pink;
+    backface-visibility: hidden;
+}
+
+#a {
+    height: 100px;
+    background-image: url('./assets/a.jpeg');
+}
+
+#b {
+    height: 100px;
+    background-image: url('./assets/b.png');
+}
+
+#c{
+    height: 100px;
+    background-image: url('./assets/c.jpeg');
+}
+
+#d {
+    height: 100px;
+    background-image: url('./assets/d.jpg');
+}
