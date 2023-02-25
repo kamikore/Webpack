@@ -28,16 +28,16 @@ class MdToHtmlPlugin {
             const _mdContent = readFileSync(this.template, 'utf-8');
             const _templateHtml = readFileSync(resolve(__dirname, 'template.html'), 'utf-8');
             console.log(_assets)
-            console.log(_mdContent)
+            console.log("mdContent :\n",_mdContent)
 
             _assets[this.filename] = {
                 source() {
-                    console.log(_templateHtml)
-                    console.log(_templateHtml.replace(INNER_MARK))
-                    marked(_mdContent, {
+                    console.log(_templateHtml)  
+                    const _parseHtml =  marked.parse(_mdContent, {
                         breaks: true
                     });
-                    return _templateHtml.replace(INNER_MARK, _mdContent);
+                    console.log("md -> html: \n",_parseHtml);
+                    return _templateHtml.replace(INNER_MARK, _parseHtml);
                 },
                 size() {
 

@@ -1,11 +1,17 @@
+// import {Configuration} from 'webpack'
+
+/**
+ * @type {Configuration}
+ */
+
 // 所有的构建工具都是基于 node.js 平台，运行模块化默认 common.js
 
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-module.exports = {
-    mode: 'development',
+const config = {
+    mode:'none',
     entry: path.join(__dirname, 'src', 'index.js'),
     output: {
         filename: 'bundle.js',
@@ -53,10 +59,20 @@ module.exports = {
         ]
     },
     plugins: [
+        // 如果有大量的设置，推荐模板
+        // new HtmlWebpackPlugin({
+        //     template: './index.html'
+        // }),
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            title: "Webpack 打包",
+            meta:{
+                viewport: "width=device-width"
+            }
         }),
         new MiniCssExtractPlugin()
     ],
 
 }
+
+
+module.exports = config
