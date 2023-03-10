@@ -60,15 +60,15 @@ const config = {
     },
     plugins: [
         // 如果有大量的设置，推荐模板
-        // new HtmlWebpackPlugin({
-        //     template: './index.html'
-        // }),
         new HtmlWebpackPlugin({
-            title: "Webpack 打包",
-            meta:{
-                viewport: "width=device-width"
-            }
+            template: './index.html'
         }),
+        // new HtmlWebpackPlugin({
+        //     title: "Webpack 打包",
+        //     meta:{
+        //         viewport: "width=device-width"
+        //     }
+        // }),
         new MiniCssExtractPlugin()
     ],
 

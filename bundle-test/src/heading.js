@@ -2,6 +2,8 @@ export function foo() {
     alert('Hello Webpack')
 }
 
+export const flag = "Hello Webpack"
+
 
 export default () => {
     const element = document.createElement("h2")
