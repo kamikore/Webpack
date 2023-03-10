@@ -11,8 +11,10 @@
 
 
 import createHeading from './heading.js'
-import {funcB} from './esModule'
-const {fun} = require("./common.js")
+const {fun,num1,add1} = require("./common.js")
+import {funcB,num2,add2} from './esModule'
+
+
 
 /* 
     测试 tree-shaking，production 模式下自动开启
@@ -20,7 +22,18 @@ const {fun} = require("./common.js")
     ESModule 可以准确shaking
 */
 // funcB()
-fun()
+// fun()
+
+console.log(num1)
+add1()
+console.log(num1)       // 需要使用引用类型才能看到改变
+
+// import引入的变量其实是对原本模块变量的一个链接引用，当原模块变量值改变的时候，我们引入的变量的值也会跟着改变
+console.log(num2)        // 1
+add2()
+console.log(num2)        // 2，即使暴露的不是引用类型，也能拿到更新的数据
+
+
 
 
 const heading = createHeading()     
